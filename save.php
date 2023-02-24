@@ -3,8 +3,13 @@ require_once 'common.php';
 require_once 'Model/SaveAction.php';
 
 
+$config = g_getConfig(); // 設定を取得します。
+$target_dir = $config['target_dir'];
+
+dump('対象パス→' . $target_dir);
+
 $model = new SaveAction(); // 保存アクションモデル
-$pathData = $model->getPathData('../');
+$pathData = $model->getPathData($target_dir);
 
 dump($pathData);
 
