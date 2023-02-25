@@ -22,3 +22,14 @@ function g_getConfig(){
 	return $config;
 	
 }
+
+// 設定を保存する
+function g_saveConfig($config){
+	$config_str = '';
+	
+	foreach ($config as $key => $value) {
+		$config_str .= "{$key} = {$value}\n";
+	}
+	
+	file_put_contents('config_l.ini', $config_str);
+}
