@@ -38,4 +38,24 @@ class BaseX{
 		
 		
 	}
+	
+	// jsonファイルから危険データを取得する
+	public function getDangerDataFromJson(){
+		// ▼ 正パスデータを取得する
+		$file = 'data/danger.json';
+		$jsonData = file_get_contents($file);
+		$data = [];
+		try {
+			$data = json_decode($jsonData, true); // 正パスデータ
+			if(empty($data)) $data = [];
+				
+		} catch (Exception $e) {
+			
+		}
+		
+		return $data;
+		
+	}
+	
+	
 }
