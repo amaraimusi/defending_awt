@@ -33,9 +33,16 @@
 	</div>
 	
 	<div class="col-md-3">
-		<a href="inspection.php" class="btn btn-primary">視察</a>
+		<div><a href="inspection.php" class="btn btn-primary">視察</a></div>
 		現在のホームディレクトリ内のファイルとディレクトリを見る。
 	</div>
+	
+	<div class="col-md-3">
+		<div><a href="view_path_data.php" class="btn btn-primary">正パスデータ</a></div>
+		許可しているパスデータを表示する
+	</div>
+	
+	
 </div>
 
 
