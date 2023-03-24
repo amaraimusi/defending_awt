@@ -26,9 +26,24 @@ class BaseX{
 			if ($file !== '.' && $file !== '..') { // '.' と '..' は除外する
 				$path = $dir . '/' . $file;
 				$update_date = date('Y-m-d H:i:s', filemtime($path));
+				$file_or_dir = '';
+				$size = null;
+				
+				if (is_dir($path)) {
+					$file_or_dir = 'dir';
+					$size = null;
+				}
+				else {
+					$file_or_dir = 'file';
+					$size =  filesize($path);
+				}
+				
+				
 				$ent = [
 						'path_name'=>$file,
 						'update_date'=>$update_date,
+						'file_or_dir'=>$file_or_dir,
+						'size'=>$size,
 				];
 				$pathData[] = $ent;
 			}
